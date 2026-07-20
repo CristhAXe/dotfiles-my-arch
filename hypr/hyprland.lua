@@ -368,7 +368,12 @@ hl.window_rule({
 })
 
 -- Screenshot Windows 11 style
-hl.bind("Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
+hl.bind("ALT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
 
 -- Grabación pantalla
 hl.bind("SUPER + ALT + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/record.sh"))
+
+-- Zathura
+hl.bind("SUPER + Z", function()
+  hl.exec_cmd("pdf=$(find ~/Documents/pdf -name '*.pdf' -printf '%f\\n' | rofi -dmenu -no-show-icons -theme-str 'window { padding: 0; } entry { enabled: false; } inputbar { enabled: false; }') && zathura ~/Documents/pdf/$pdf")
+end)
