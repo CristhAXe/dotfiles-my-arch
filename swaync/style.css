@@ -1,0 +1,125 @@
+/* =========================
+   SwayNC Terminal Dark Theme
+   ========================= */
+
+* {
+    font-family: "Carlito", monospace;
+}
+
+
+/* Notificaciones flotantes */
+
+.notification-row {
+    outline: none;
+}
+
+.notification {
+    background: #0b0b0b;
+    color: #ffffff;
+
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+
+    margin: 12px;
+    padding: 12px;
+
+    min-width: 350px;
+}
+
+
+.notification-content {
+    padding: 0;
+}
+
+
+.summary {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.body {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+/* =========================
+   Centro de control
+   ========================= */
+
+.control-center {
+    background: #0b0b0b;
+
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+
+    color: #ffffff;
+}
+
+
+.control-center-list {
+    background: transparent;
+}
+
+
+/* =========================
+   Calendario
+   ========================= */
+
+   /* Menubar / Calendar */
+
+   .menubar {
+       background: #0b0b0b;
+       color: #ffffff;
+       border: 1px solid #ffffff;
+       border-radius: 0px;
+   }
+
+   calendar {
+       background: #0b0b0b;
+       color: #ffffff;
+   }
+
+   calendar:selected {
+       background: #ffffff;
+       color: #000000;
+   }
+
+/* =========================
+   Botones (wifi, bluetooth, etc)
+   ========================= */
+
+.widget {
+    background: #0b0b0b;
+
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+
+    color: #ffffff;
+}
+
+
+.widget button {
+    background: #0b0b0b;
+
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+
+    color: #ffffff;
+}
+
+
+.widget button:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+/* Botón cerrar */
+
+.close-button {
+    background: transparent;
+    color: #ffffff;
+}

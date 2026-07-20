@@ -1,0 +1,77 @@
+(defwindow calendar
+  :monitor 0
+  :geometry (geometry
+    :x "41px"
+    :y "10px"
+    :width "120px"
+    :height "150px"
+    :anchor "top right"
+  )
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+
+  (box
+    :class "calendar-container"
+    :orientation "vertical"
+
+    (calendar
+      :class "calendar-widget"
+    )
+  )
+)
+
+
+(defwindow power
+  :monitor 0
+  :geometry (geometry
+    :x "41px"
+    :y "170px"
+    :width "180px"
+    :height "230px"
+    :anchor "top right"
+  )
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+
+  (box
+    :class "power-container"
+    :orientation "vertical"
+
+    (label
+      :class "power-title"
+      :text "Power"
+    )
+
+    (button
+      :class "power-button"
+      :onclick "~/.config/eww/scripts/power.sh shutdown"
+      "󰐥 Shutdown"
+    )
+
+    (button
+      :class "power-button"
+      :onclick "~/.config/eww/scripts/power.sh restart"
+      "󰜉 Restart"
+    )
+
+    (button
+      :class "power-button"
+      :onclick "~/.config/eww/scripts/power.sh logout"
+      "󰗼 Logout"
+    )
+
+    (button
+      :class "power-button"
+      :onclick "~/.config/eww/scripts/power.sh lock"
+      "󰌾 Lock"
+    )
+
+
+    (button
+        :onclick "eww close power"
+        "󰅖 Close"
+    )
+  )
+)
