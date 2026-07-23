@@ -11,6 +11,7 @@
 {
   "layer": "top",
   "position": "top",
+  "exclusive": true,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": ["group/expand", "hyprland/language", "tray", "pulseaudio#mic", "pulseaudio#source","custom/audio-output", "custom/recording", "clock", "custom/notification", "custom/power"],

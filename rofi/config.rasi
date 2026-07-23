@@ -1,5 +1,5 @@
 configuration {
-    modi: "drun";
+    modi: "drun,window";
     show-icons: true;
     display-drun: " >> ";
     drun-display-format: "{name}";
