@@ -17,9 +17,10 @@
 
 ------------------
 ---- MONITORS ----
-------------------
+-------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+
 hl.monitor({
   output   = "",
   mode     = "2560x1440@144",
@@ -46,12 +47,14 @@ local wallpaper   = "hyprpaper"
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:-
---
+
 hl.on("hyprland.start", function()
   hl.exec_cmd(wallpaper)
   hl.exec_cmd("pkill waybar; waybar")
   hl.exec_cmd("pkill swaync; swaync")
+  hl.exec_cmd("gammastep")
 end)
+
 
 
 -------------------------------
@@ -90,10 +93,10 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
   general = {
-    gaps_in          = 4,
-    gaps_out         = 30,
+    gaps_in          = 3,
+    gaps_out         = 10,
 
-    border_size      = 1,9,
+    border_size      = 1,
 
     col              = {
       active_border   = { colors = { "rgba(ffffffff)", "rgba(ffffffff)" }, angle = 0 },
@@ -126,7 +129,7 @@ hl.config({
 
     blur             = {
       enabled  = true,
-      size     = 3,
+      size     = 10,
       passes   = 1,
       vibrancy = 0.1696,
     },
@@ -230,7 +233,7 @@ hl.config({
 
     follow_mouse = 1,
 
-    sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
+    sensitivity  = -0.5, -- -1.0 - 1.0, 0 means no modification.
 
     touchpad     = {
       natural_scroll = false,
@@ -248,14 +251,14 @@ hl.gesture({
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
   name        = "epic-mouse-v1",
-  sensitivity = -0.5,
+  sensitivity = -0.4,
 })
 
 
 ---------------------
 ---- KEYBINDINGS ----
 ----------------------
----waybar reload--
+---waybar reload------
 
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier

@@ -12,14 +12,14 @@
 
 * {
   font-family: Metropolis Medium, "JetBrainsMono Nerd Font Propo";
-  font-size: 15px;
+  font-size: 16px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  min-height: 30px;
-  padding: 0px 5px 0px 5px;
+  min-height: 10px;
+  padding: 0px 10px 0px 5px;
 }
 
 window#waybar {
-  background-color: @rgb;
+  background-color: #000000;
 }
 
 window#waybar.empty #window {
@@ -40,7 +40,7 @@ tooltip * {
 }
 
 #workspaces button {
-  background: transparent;
+  background: #000000;
   border-radius: 0px;
   color: @workspace_inactive;
   padding: 0px;

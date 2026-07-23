@@ -82,8 +82,8 @@
 
     "pulseaudio#mic": {
       "format": "{format_source}",
-      "format-source-muted": "microfono",
-      "format-source": "microfono-muted <span foreground='red'><sup></sup></span>",
+      "format-source-muted": "microfono-muted",
+      "format-source": "microfono <span foreground='red'><sup></sup></span>",
       "on-click": "pactl set-source-mute 0 toggle",
       "tooltip": true,
       "tooltip-format": "Microphone Status"

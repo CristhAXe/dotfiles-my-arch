@@ -1,12 +1,10 @@
 {
     "positionX": "right",
     "positionY": "top",
-
     "control-center-width": 350,
     "notification-window-width": 350,
-
     "cssPriority": "user",
-
+    "image-visibility": "never",
     "widgets": [
         "inhibitors",
         "title",

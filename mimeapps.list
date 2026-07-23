@@ -1,5 +1,6 @@
 [Added Associations]
 video/mp4=mpv-17.desktop;/home/cristh/.local/share/applications/mpv-16.desktop;
+text/plain=dev.zed.Zed.desktop;
 
 [Default Applications]
 image/jpeg=imv.desktop
