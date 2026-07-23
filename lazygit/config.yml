@@ -1,0 +1,19 @@
+# ~/.config/lazygit/config.yml
+gui:
+  theme:
+    activeBorderColor:
+      - white
+      - bold
+    inactiveBorderColor:
+      - white
+    optionsTextColor:
+      - white
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+    unstagedChangesColor:
+      - white
+    defaultFgColor:
+      - white
+  border: ascii

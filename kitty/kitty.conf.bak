@@ -66,6 +66,6 @@ shell /bin/zsh
 
 
 # BEGIN_KITTY_THEME
-# Base2Tone Desert Dark
+# Black Metal
 include current-theme.conf
 # END_KITTY_THEME

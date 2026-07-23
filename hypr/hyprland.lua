@@ -16,7 +16,7 @@
 
 
 ------------------
----- MONITORS ----
+---- MONITORS -----
 -------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
@@ -93,13 +93,13 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
   general = {
-    gaps_in          = 3,
-    gaps_out         = 10,
+    gaps_in          = 4,
+    gaps_out         = 5,
 
     border_size      = 1,
 
     col              = {
-      active_border   = { colors = { "rgba(ffffffff)", "rgba(ffffffff)" }, angle = 0 },
+      active_border   = { colors = { "rgba(babacaee)", "rgba(babacaee)" }, angle = 2 },
       inactive_border = "rgba(595959aa)",
     },
 
@@ -193,7 +193,6 @@ hl.config({
   },
 })
 
--- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
   master = {
     new_status = "master",
@@ -270,7 +269,25 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M",
   hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + V", function()
+    hl.dispatch(
+        hl.dsp.window.float({ action = "set" })
+    )
+
+    hl.dispatch(
+        hl.dsp.window.resize({
+            x = 1280,
+            y = 720,
+            relative = false,
+            window = "activewindow"
+        })
+    )
+
+    hl.dispatch(
+        hl.dsp.window.center()
+    )
+end)
+
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
@@ -380,3 +397,63 @@ hl.bind("SUPER + ALT + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/record.sh"))
 hl.bind("SUPER + Z", function()
   hl.exec_cmd("pdf=$(find ~/Documents/pdf -name '*.pdf' -printf '%f\\n' | rofi -dmenu -no-show-icons -theme-str 'window { padding: 0; } entry { enabled: false; } inputbar { enabled: false; }') && zathura ~/Documents/pdf/$pdf")
 end)
+
+--btop
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("kitty -e btop"))
+
+----------------------------
+-- MOVE WINDOWS (SWAP)
+-- ALT + ARROW KEYS
+----------------------------
+
+hl.bind("ALT + left", hl.dsp.window.swap({ direction = "left" }))
+hl.bind("ALT + right", hl.dsp.window.swap({ direction = "right" }))
+hl.bind("ALT + up", hl.dsp.window.swap({ direction = "up" }))
+hl.bind("ALT + down", hl.dsp.window.swap({ direction = "down" }))
+
+
+----------------------------
+-- RESIZE WINDOWS
+-- SUPER + SHIFT + ARROW KEYS
+----------------------------
+
+local resize_step = 50
+
+hl.bind("SUPER + SHIFT + left", function()
+    hl.dispatch(hl.dsp.window.resize({
+        x = -resize_step,
+        y = 0,
+        relative = true,
+        window = "activewindow"
+    }))
+end, { repeating = true })
+
+
+hl.bind("SUPER + SHIFT + right", function()
+    hl.dispatch(hl.dsp.window.resize({
+        x = resize_step,
+        y = 0,
+        relative = true,
+        window = "activewindow"
+    }))
+end, { repeating = true })
+
+
+hl.bind("SUPER + SHIFT + up", function()
+    hl.dispatch(hl.dsp.window.resize({
+        x = 0,
+        y = -resize_step,
+        relative = true,
+        window = "activewindow"
+    }))
+end, { repeating = true })
+
+
+hl.bind("SUPER + SHIFT + down", function()
+    hl.dispatch(hl.dsp.window.resize({
+        x = 0,
+        y = resize_step,
+        relative = true,
+        window = "activewindow"
+    }))
+end, { repeating = true })
