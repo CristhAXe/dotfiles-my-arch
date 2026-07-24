@@ -460,51 +460,6 @@ end, { repeating = true })
 
 
 
-----------------------------
--- MOVE FLOATING WINDOWS
--- SUPER + ARROWS
-----------------------------
-
-local move_step = 50
-
-hl.bind("SUPER + left", function()
-    hl.dispatch(hl.dsp.window.move({
-        x = -move_step,
-        y = 0,
-        relative = true,
-        window = "activewindow"
-    }))
-end, { repeating = true })
-
-
-hl.bind("SUPER + right", function()
-    hl.dispatch(hl.dsp.window.move({
-        x = move_step,
-        y = 0,
-        relative = true,
-        window = "activewindow"
-    }))
-end, { repeating = true })
-
-
-hl.bind("SUPER + up", function()
-    hl.dispatch(hl.dsp.window.move({
-        x = 0,
-        y = -move_step,
-        relative = true,
-        window = "activewindow"
-    }))
-end, { repeating = true })
-
-
-hl.bind("SUPER + down", function()
-    hl.dispatch(hl.dsp.window.move({
-        x = 0,
-        y = move_step,
-        relative = true,
-        window = "activewindow"
-    }))
-end, { repeating = true })
 
 --tab apps
 hl.bind("ALT + Tab", hl.dsp.exec_cmd("rofi -show window"))
