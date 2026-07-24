@@ -12,8 +12,8 @@ disable_ligatures never
 # ==========================
 # AMOLED THEME
 # ==========================
-# background #000000
-# foreground #e6e6e6
+background #0a0a0a
+foreground #d8dee9
 
 # Cursor
 # cursor #ffffff
@@ -28,12 +28,14 @@ disable_ligatures never
 # TRANSPARENCIA + BLUR
 # ==========================
 
-background_opacity 0.9
+background_opacity 0.8
+dynamic_background_opacity yes
 
 # ==========================
 # PADDING
 # ==========================
 
+window_padding_width 12
 window_padding_width 12
 
 # Esquinas
@@ -66,6 +68,6 @@ shell /bin/zsh
 
 
 # BEGIN_KITTY_THEME
-# Apprentice
+# Base2Tone Desert Dark
 include current-theme.conf
 # END_KITTY_THEME

@@ -1,0 +1,194 @@
+/* Vintage Gruvbox / óleo */
+@define-color window_bg_color #2b2924;
+@define-color accent_bg_color #665c4b;
+@define-color theme_fg_color #e3d5b8;
+@define-color secondary_fg_color #a89b7b;
+
+@define-color yellow #c9a227;
+@define-color green #8a8f5a;
+@define-color red #b05a4b;
+
+
+/* Reset */
+* {
+  all: unset;
+}
+
+
+/* Main launcher */
+.box-wrapper {
+  background: @window_bg_color;
+
+  padding: 20px;
+  border-radius: 18px;
+
+  border: 1px solid #3c3836;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45);
+}
+
+
+/* Search input */
+.input {
+  caret-color: @yellow;
+
+  background: #282828;
+
+  padding: 12px 14px;
+
+  color: @theme_fg_color;
+
+  border-radius: 10px;
+
+  border: 1px solid #504945;
+}
+
+
+.input placeholder {
+  opacity: 0.45;
+}
+
+
+/* Results */
+.list {
+  color: @theme_fg_color;
+}
+
+
+.item-box {
+  border-radius: 10px;
+
+  padding: 10px;
+}
+
+
+/* Selected item */
+child:hover .item-box,
+child:selected .item-box {
+
+  background: #3c3836;
+
+  border: 1px solid #665c54;
+}
+
+
+/* Text */
+.item-text {
+  font-size: 14px;
+  color: @theme_fg_color;
+}
+
+
+.item-subtext {
+
+  font-size: 12px;
+
+  color: @secondary_fg_color;
+
+  opacity: 0.8;
+}
+
+
+/* Icons */
+.item-image,
+.item-image-text {
+
+  margin-right: 12px;
+
+}
+
+
+/* Quick activation */
+.item-quick-activation {
+
+  margin-left: 10px;
+
+  background: #504945;
+
+  border-radius: 6px;
+
+  padding: 8px;
+
+  color: @yellow;
+}
+
+
+/* Empty / hints */
+.placeholder,
+.elephant-hint {
+
+  color: @secondary_fg_color;
+
+  opacity: 0.7;
+
+}
+
+
+/* Keybind footer */
+.keybinds-wrapper {
+
+  border-top: 1px solid #3c3836;
+
+  font-size: 12px;
+
+  opacity: 0.6;
+
+  color: @theme_fg_color;
+
+}
+
+
+.keybind-bind {
+
+  font-weight: bold;
+
+  color: @yellow;
+
+  text-transform: lowercase;
+}
+
+
+/* Errors */
+.error {
+
+  padding: 10px;
+
+  background: @red;
+
+  color: #fbf1c7;
+
+  border-radius: 6px;
+
+}
+
+
+/* Preview */
+.preview {
+
+  border: 1px solid #504945;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  color: @theme_fg_color;
+
+}
+
+
+/* Icons size */
+.normal-icons {
+  -gtk-icon-size: 20px;
+}
+
+
+.large-icons {
+  -gtk-icon-size: 32px;
+}
+
+
+/* Hide scrollbar */
+scrollbar {
+  opacity: 0;
+}
