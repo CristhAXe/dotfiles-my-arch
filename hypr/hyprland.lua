@@ -96,7 +96,7 @@ hl.config({
     gaps_in          = 4,
     gaps_out         = 5,
 
-    border_size      = 1,
+    border_size      = 3,
 
     col              = {
       active_border   = { colors = { "rgba(babacaee)", "rgba(babacaee)" }, angle = 2 },
@@ -129,8 +129,8 @@ hl.config({
 
     blur             = {
       enabled  = true,
-      size     = 10,
-      passes   = 1,
+      size     = 5,
+      passes   = 2,
       vibrancy = 0.1696,
     },
   },
@@ -232,7 +232,7 @@ hl.config({
 
     follow_mouse = 1,
 
-    sensitivity  = -0.5, -- -1.0 - 1.0, 0 means no modification.
+    sensitivity  = -0.6, -- -1.0 - 1.0, 0 means no modification.
 
     touchpad     = {
       natural_scroll = false,
